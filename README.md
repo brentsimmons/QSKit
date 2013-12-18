@@ -4,7 +4,7 @@ by [Q Branch](http://qbranch.co/)
 
 ## Low-level code with tests
 
-QSKit is a collection of categories and utilities that we use in our software. The project includes unit tests so we can be sure to build on a solid foundation.
+QSKit is a collection of categories and utilities that we use in our software. The project includes unit tests so we can build on a solid foundation.
 
 None of it is high-tech. It’s just some basics, our standard kit.
 
