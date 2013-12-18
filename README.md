@@ -56,6 +56,10 @@ Xcode’s test system wants an app, so there’s a Mac app included. It doesn’
 
 Open the project and choose Product > Test (or hit cmd-U) to run the tests.
 
+### Future
+
+We’ll keep adding to QSKit. The kit is forever a work in progress.
+
 ### Contact
 
 [Brent Simmons](https://github.com/brentsimmons)<br />
