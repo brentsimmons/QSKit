@@ -63,6 +63,6 @@ Open the project and choose Product > Test (or hit cmd-U) to run the tests.
 
 ### License
 
-DB5 is available under the MIT license. See the LICENSE file for details.
+Q Branch Standard Kit is available under the MIT license. See the LICENSE file for details.
 
 If you use any or all of QSKit in an app, please let us know — we’d like to see your app.
