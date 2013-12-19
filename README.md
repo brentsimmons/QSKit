@@ -18,7 +18,7 @@ Any given app may not need everything, and so we don’t build it as a framework
 
 Category methods are prefixed with `qs_`. This isn’t beautiful, but it does mean our methods won’t collide with Apple’s methods, and it makes it easier to spot category methods.
 
-Many of the categories for collection are for adding or getting objects safely — that is, they won’t thrown an exception if a key is nil (for instance).
+Many of the categories for collection are for adding or getting objects safely — that is, they won’t throw an exception if a key is nil (for instance).
 
 But there are a bunch of other categories too — `-[NSData qs_hexadecimalString]` and `-[NSNotificationCenter qs_postNotificationNameOnMainThread:object:userInfo:]` are examples.
 
