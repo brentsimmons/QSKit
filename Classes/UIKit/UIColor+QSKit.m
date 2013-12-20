@@ -21,13 +21,4 @@
 }
 
 
-- (UIColor *)qs_colorWithAlpha:(CGFloat)alpha {
-
-    CGFloat red, green, blue, currentAlpha;
-    [self getRed:&red green:&green blue:&blue alpha:&currentAlpha];
-
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
-
-
 @end

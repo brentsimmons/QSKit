@@ -15,7 +15,5 @@
 
 + (UIColor *)qs_colorWithHexString:(NSString *)hexString;
 
-- (UIColor *)qs_colorWithAlpha:(CGFloat)alpha;
-
 
 @end

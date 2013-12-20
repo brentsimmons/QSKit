@@ -56,25 +56,4 @@ static const CGFloat accuracy = 0.01f;
 }
 
 
-- (void)testQSColorWithAlpha {
-
-	NSColor *color = [NSColor qs_colorWithHexString:@"00FF0033"];
-	color = [color qs_colorWithAlpha:0.0f];
-	CGFloat red, green, blue, alpha;
-	[color getRed:&red green:&green blue:&blue alpha:&alpha];
-
-	XCTAssertEqualWithAccuracy(alpha, 0.0f, accuracy);
-
-	color = [color qs_colorWithAlpha:1.0f];
-	[color getRed:&red green:&green blue:&blue alpha:&alpha];
-
-	XCTAssertEqualWithAccuracy(alpha, 1.0f, accuracy);
-
-	color = [color qs_colorWithAlpha:0.387f];
-	[color getRed:&red green:&green blue:&blue alpha:&alpha];
-
-	XCTAssertEqualWithAccuracy(alpha, 0.387f, accuracy);
-}
-
-
 @end
