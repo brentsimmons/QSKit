@@ -78,7 +78,6 @@ static xmlSAXHandler saxHandlerStruct;
 
 	if (self.context == nil) {
 
-		static xmlSAXHandler saxHandlerStruct;
 		self.context = xmlCreatePushParserCtxt(&saxHandlerStruct, (__bridge void *)self, nil, 0, nil);
 		xmlCtxtUseOptions(self.context, XML_PARSE_RECOVER | XML_PARSE_NOENT);
 	}
