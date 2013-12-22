@@ -7,7 +7,6 @@
 //
 
 #import "FMDatabase.h"
-#import "FMDatabase+Extras.h"
 #import "QSDatabaseQueue.h"
 #import "QSPlatform.h"
 
@@ -48,6 +47,13 @@
 
 #pragma mark - Database
 
+- (FMDatabase*)openDatabaseWithPath:(NSString*)path
+{
+    FMDatabase* db = [FMDatabase databaseWithPath:path];
+    return ([db open]) ? db : nil;
+}
+
+
 - (FMDatabase *)database {
 
 	/*I've always done it this way -- kept a per-thread database in the threadDictionary -- and I know it's solid. Maybe it's not necessary with a serial queue, but my understanding was that SQLite wanted a different database per thread (and a serial queue may run on different threads).*/
@@ -57,7 +63,7 @@
 
 	if (database == nil) {
 
-		database = [FMDatabase openDatabaseWithPath:self.databasePath];
+		database = [self openDatabaseWithPath:self.databasePath];
 		[database executeUpdate:@"PRAGMA synchronous = 1;"];
 		[database setShouldCacheStatements:YES];
 
