@@ -7,8 +7,8 @@
 //
 
 #import "FMDatabase.h"
-#import "FMDatabase+Extras.h"
 #import "QSDatabaseQueue.h"
+#import "QSPlatform.h"
 
 
 @interface QSDatabaseQueue ()
@@ -56,7 +56,8 @@
 
 	if (database == nil) {
 
-		database = [FMDatabase openDatabaseWithPath:self.databasePath];
+		database = [FMDatabase databaseWithPath:self.databasePath];
+		[database open];
 		[database executeUpdate:@"PRAGMA synchronous = 1;"];
 		[database setShouldCacheStatements:YES];
 
