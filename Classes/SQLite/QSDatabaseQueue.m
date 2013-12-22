@@ -9,6 +9,7 @@
 #import "FMDatabase.h"
 #import "FMDatabase+Extras.h"
 #import "QSDatabaseQueue.h"
+#import "QSPlatform.h"
 
 
 @interface QSDatabaseQueue ()
