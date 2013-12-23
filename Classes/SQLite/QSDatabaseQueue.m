@@ -36,10 +36,12 @@
 		NSLog(@"Error creating data folder.");
 		abort();
 	}
-	
+
 	_databasePath = [dataFolder stringByAppendingPathComponent:filename];
 
 	_serialDispatchQueue = dispatch_queue_create([[NSString stringWithFormat:@"QSDatabaseQueue serial queue - %@", filename] UTF8String], DISPATCH_QUEUE_SERIAL);
+
+	_excludeFromBackup = excludeFromBackup;
 
 	return self;
 }
