@@ -14,6 +14,7 @@
 
 - (id)qs_safeObjectAtIndex:(NSUInteger)anIndex {
 	if ([self count] < 1 || anIndex >= [self count])
+	if (anIndex >= [self count])
 		return nil;
 	return [self objectAtIndex:anIndex];
 }
