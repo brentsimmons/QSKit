@@ -8,6 +8,7 @@
 
 
 @import Foundation;
+@import UIKit;
 
 
 CGSize QSScaledSizeForImageFittingSize(CGSize imageSize, CGSize constrainingSize); /*does a ceil on size.*/

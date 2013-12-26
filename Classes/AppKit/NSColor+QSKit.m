@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Q Branch LLC. All rights reserved.
 //
 
+#if !TARGET_OS_IPHONE
+
+
 #import "NSColor+QSKit.h"
 #import "NSString+QSKit.h"
 
@@ -22,3 +25,6 @@
 
 
 @end
+
+
+#endif

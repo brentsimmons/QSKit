@@ -8,6 +8,7 @@
 
 
 @import Foundation;
+@import UIKit;
 
 
 BOOL QSStringIsEmpty(NSString *s); /*Yes if null, NSNull, or length < 1*/
