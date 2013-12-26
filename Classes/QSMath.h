@@ -8,8 +8,9 @@
 
 
 @import Foundation;
+#if TARGET_OS_IPHONE
 @import UIKit;
-
+#endif
 
 /*Does the right things with 32-bit/64-bit sizes.*/
 
