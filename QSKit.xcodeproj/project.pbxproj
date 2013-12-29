@@ -12,7 +12,6 @@
 		8411AC831821CB0000338503 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8411AC621821CB0000338503 /* Cocoa.framework */; };
 		8411AC8B1821CB0000338503 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8411AC891821CB0000338503 /* InfoPlist.strings */; };
 		8418EF86182475620087EB14 /* subscriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8418EF85182475620087EB14 /* subscriptions.plist */; };
-		8418EF8918247D340087EB14 /* QSOPMLParserFeedsOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418EF8818247D340087EB14 /* QSOPMLParserFeedsOnly.m */; };
 		8418EF8A18247D340087EB14 /* QSOPMLParserFeedsOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418EF8818247D340087EB14 /* QSOPMLParserFeedsOnly.m */; };
 		8418EF961824A62D0087EB14 /* NSTimer+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418EF951824A62D0087EB14 /* NSTimer+QSKit.m */; };
 		8418EF971824A62D0087EB14 /* NSTimer+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418EF951824A62D0087EB14 /* NSTimer+QSKit.m */; };
@@ -40,7 +39,6 @@
 		842D4B5E1821D35E0034B5E3 /* NSString+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B2E1821D35E0034B5E3 /* NSString+QSKit.m */; };
 		842D4B5F1821D35E0034B5E3 /* NSImage+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B311821D35E0034B5E3 /* NSImage+QSKit.m */; };
 		842D4B601821D35E0034B5E3 /* NSImage+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B311821D35E0034B5E3 /* NSImage+QSKit.m */; };
-		842D4B611821D35E0034B5E3 /* QSImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B331821D35E0034B5E3 /* QSImageRenderer.m */; };
 		842D4B621821D35E0034B5E3 /* QSImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B331821D35E0034B5E3 /* QSImageRenderer.m */; };
 		842D4B651821D35E0034B5E3 /* QSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B381821D35E0034B5E3 /* QSConstants.m */; };
 		842D4B661821D35E0034B5E3 /* QSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B381821D35E0034B5E3 /* QSConstants.m */; };
@@ -48,13 +46,11 @@
 		842D4B681821D35E0034B5E3 /* QSPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B3A1821D35E0034B5E3 /* QSPlatform.m */; };
 		842D4B691821D35E0034B5E3 /* NSString+QSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B3D1821D35E0034B5E3 /* NSString+QSDatabase.m */; };
 		842D4B6A1821D35E0034B5E3 /* NSString+QSDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B3D1821D35E0034B5E3 /* NSString+QSDatabase.m */; };
-		842D4B711821D35E0034B5E3 /* QSHTTPConditionalGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B471821D35E0034B5E3 /* QSHTTPConditionalGetInfo.m */; };
 		842D4B721821D35E0034B5E3 /* QSHTTPConditionalGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B471821D35E0034B5E3 /* QSHTTPConditionalGetInfo.m */; };
 		842D4B731821D35E0034B5E3 /* QSHTTPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B491821D35E0034B5E3 /* QSHTTPConstants.m */; };
 		842D4B741821D35E0034B5E3 /* QSHTTPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B491821D35E0034B5E3 /* QSHTTPConstants.m */; };
 		842D4B751821D35E0034B5E3 /* QSMimeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B4B1821D35E0034B5E3 /* QSMimeTypes.m */; };
 		842D4B761821D35E0034B5E3 /* QSMimeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B4B1821D35E0034B5E3 /* QSMimeTypes.m */; };
-		842D4B771821D35E0034B5E3 /* QSSAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B4E1821D35E0034B5E3 /* QSSAXParser.m */; };
 		842D4B781821D35E0034B5E3 /* QSSAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D4B4E1821D35E0034B5E3 /* QSSAXParser.m */; };
 		842D4B7A182210860034B5E3 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 842D4B79182210860034B5E3 /* libxml2.2.dylib */; };
 		842D4B7B182222230034B5E3 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 842D4B79182210860034B5E3 /* libxml2.2.dylib */; };
@@ -65,13 +61,9 @@
 		847DED5A1824507E00AAB887 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 847DED571824507E00AAB887 /* background.jpg */; };
 		847DED5B1824507E00AAB887 /* qbranch.png in Resources */ = {isa = PBXBuildFile; fileRef = 847DED581824507E00AAB887 /* qbranch.png */; };
 		847DED5D182451BB00AAB887 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = 847DED5C182451BB00AAB887 /* test.gif */; };
-		847DED6018245A4B00AAB887 /* QSNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED5F18245A4B00AAB887 /* QSNode.m */; };
 		847DED6118245A4B00AAB887 /* QSNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED5F18245A4B00AAB887 /* QSNode.m */; };
-		847DED641824662400AAB887 /* QSOPMLFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED631824662400AAB887 /* QSOPMLFolder.m */; };
 		847DED651824662400AAB887 /* QSOPMLFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED631824662400AAB887 /* QSOPMLFolder.m */; };
-		847DED681824665800AAB887 /* QSOPMLFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED671824665800AAB887 /* QSOPMLFeed.m */; };
 		847DED691824665800AAB887 /* QSOPMLFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED671824665800AAB887 /* QSOPMLFeed.m */; };
-		847DED711824677D00AAB887 /* QSOPMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED701824677D00AAB887 /* QSOPMLParser.m */; };
 		847DED721824677D00AAB887 /* QSOPMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED701824677D00AAB887 /* QSOPMLParser.m */; };
 		847DED7518246B1600AAB887 /* NSDictionary+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED7418246B1600AAB887 /* NSDictionary+QSKit.m */; };
 		847DED7618246B1600AAB887 /* NSDictionary+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DED7418246B1600AAB887 /* NSDictionary+QSKit.m */; };
@@ -662,16 +654,12 @@
 				842D4B531821D35E0034B5E3 /* NSData+QSKit.m in Sources */,
 				842D4B751821D35E0034B5E3 /* QSMimeTypes.m in Sources */,
 				842D4B511821D35E0034B5E3 /* NSView+QSKit.m in Sources */,
-				842D4B611821D35E0034B5E3 /* QSImageRenderer.m in Sources */,
-				847DED681824665800AAB887 /* QSOPMLFeed.m in Sources */,
 				842D4B5D1821D35E0034B5E3 /* NSString+QSKit.m in Sources */,
 				842D4B081821CC6A0034B5E3 /* QSAppDelegate.m in Sources */,
 				84C313F81822EE4E0090EE2F /* NSArray+QSKit.m in Sources */,
 				842D4B551821D35E0034B5E3 /* NSDate+QSKit.m in Sources */,
 				842D4B4F1821D35E0034B5E3 /* NSColor+QSKit.m in Sources */,
 				84C313EE1822E8140090EE2F /* QSMath.m in Sources */,
-				847DED711824677D00AAB887 /* QSOPMLParser.m in Sources */,
-				847DED641824662400AAB887 /* QSOPMLFolder.m in Sources */,
 				84A348EB182B5B610007FE90 /* NSMutableURLRequest+QSKit.m in Sources */,
 				84C313FC1822EEA80090EE2F /* NSMutableArray+QSKit.m in Sources */,
 				84C314001822EF220090EE2F /* NSAttributedString+QSKit.m in Sources */,
@@ -685,14 +673,10 @@
 				842D4B691821D35E0034B5E3 /* NSString+QSDatabase.m in Sources */,
 				842D4B651821D35E0034B5E3 /* QSConstants.m in Sources */,
 				8418EF961824A62D0087EB14 /* NSTimer+QSKit.m in Sources */,
-				842D4B771821D35E0034B5E3 /* QSSAXParser.m in Sources */,
 				849938AB18624793005F56DF /* QSDateParser.m in Sources */,
-				842D4B711821D35E0034B5E3 /* QSHTTPConditionalGetInfo.m in Sources */,
 				842D4B5B1821D35E0034B5E3 /* NSObject+QSKit.m in Sources */,
-				847DED6018245A4B00AAB887 /* QSNode.m in Sources */,
 				847DED7518246B1600AAB887 /* NSDictionary+QSKit.m in Sources */,
 				84C314081822F19F0090EE2F /* NSMutableDictionary+QSKit.m in Sources */,
-				8418EF8918247D340087EB14 /* QSOPMLParserFeedsOnly.m in Sources */,
 				842D4B5F1821D35E0034B5E3 /* NSImage+QSKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
