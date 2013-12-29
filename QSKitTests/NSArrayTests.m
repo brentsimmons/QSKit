@@ -29,6 +29,10 @@
 	testArray = @[];
 
 	XCTAssertNil([testArray qs_safeObjectAtIndex:0]);
+
+	NSInteger anIndex = -1;
+	XCTAssertNoThrow([testArray qs_safeObjectAtIndex:(NSUInteger)anIndex]);
+	XCTAssertNil([testArray qs_safeObjectAtIndex:(NSUInteger)anIndex]);
 }
 
 @end
