@@ -8,9 +8,7 @@
 
 
 @import Foundation;
-#if TARGET_OS_IPHONE
-@import UIKit;
-#endif
+#import "QSPlatform.h"
 
 BOOL QSStringIsEmpty(NSString *s); /*Yes if null, NSNull, or length < 1*/
 

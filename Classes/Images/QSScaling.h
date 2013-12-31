@@ -8,9 +8,7 @@
 
 
 @import Foundation;
-#if TARGET_OS_IPHONE
-@import UIKit;
-#endif
+#import "QSPlatform.h"
 
 CGSize QSScaledSizeForImageFittingSize(CGSize imageSize, CGSize constrainingSize); /*does a ceil on size.*/
 

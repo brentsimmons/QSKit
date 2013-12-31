@@ -8,9 +8,7 @@
 
 
 @import Foundation;
-#if TARGET_OS_IPHONE
-@import UIKit;
-#endif
+#import "QSPlatform.h"
 
 /*Does the right things with 32-bit/64-bit sizes.*/
 
