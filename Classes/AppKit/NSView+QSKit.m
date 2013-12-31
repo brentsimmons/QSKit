@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Q Branch LLC. All rights reserved.
 //
 
+
+#if !TARGET_OS_IPHONE
+
+
 #import "NSView+QSKit.h"
 
 
@@ -24,3 +28,6 @@
 
 
 @end
+
+
+#endif

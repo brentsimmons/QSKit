@@ -7,6 +7,9 @@
 //
 
 
+#if !TARGET_OS_IPHONE
+
+
 @import Cocoa;
 #import "QSBlocks.h"
 
@@ -19,3 +22,6 @@
 
 
 @end
+
+
+#endif
