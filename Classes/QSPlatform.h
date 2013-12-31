@@ -11,6 +11,8 @@
 
 #if TARGET_OS_IPHONE
 
+@import UIKit;
+
 #define QS_IMAGE UIImage
 #define QS_COLOR UIColor
 #define QS_FONT UIFont
@@ -19,6 +21,8 @@
 #define QSEdgeInsetsMake UIEdgeInsetsMake
 
 #else
+
+@import AppKit;
 
 #define QS_IMAGE NSImage
 #define QS_COLOR NSColor
