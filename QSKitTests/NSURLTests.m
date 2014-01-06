@@ -25,6 +25,8 @@
 
 	XCTAssertFalse([[NSURL URLWithString:@"https://apple.com/"] qs_isHTTPURL]);
 	XCTAssertFalse([[NSURL URLWithString:@"about:blank"] qs_isHTTPURL]);
+	XCTAssertFalse([[NSURL URLWithString:@"randomstring"] qs_isHTTPURL]);
+    XCTAssertFalse([[NSURL URLWithString:@""] qs_isHTTPURL]);
 }
 
 
@@ -36,6 +38,8 @@
 
 	XCTAssertFalse([[NSURL URLWithString:@"http://apple.com/"] qs_isHTTPSURL]);
 	XCTAssertFalse([[NSURL URLWithString:@"about:blank"] qs_isHTTPSURL]);
+	XCTAssertFalse([[NSURL URLWithString:@"randomstring"] qs_isHTTPSURL]);
+    XCTAssertFalse([[NSURL URLWithString:@""] qs_isHTTPSURL]);
 }
 
 
