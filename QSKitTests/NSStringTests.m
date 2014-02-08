@@ -194,4 +194,29 @@
 }
 
 
+- (void)testQSLinks {
+
+	XCTAssertEqualObjects([@"www.example.com" qs_links], @[@"www.example.com"]);
+	XCTAssertEqualObjects([@"http://www.example.com" qs_links], @[@"http://www.example.com"]);
+
+	/*Tests from Justin: http://carpeaqua.com/2014/02/08/adventures-in-debugging-nsregularexpression-edition/
+	 The regular expression he was using in Glassboard had a bug with ) characters.
+	 That bug is fixed in the regular expression used by QSKit.*/
+
+	NSString *samplePost = @"This is a post with http://carpeaqua.com/ https://log.carpeaqua.com http://daringfireball.net";
+	NSArray *expectedResult = @[@"http://carpeaqua.com/", @"https://log.carpeaqua.com", @"http://daringfireball.net"];
+	XCTAssertEqualObjects([samplePost qs_links], expectedResult);
+
+	NSString *sampleWithRegex1 = @"Hi there.\n\n^((\\S.*)(\\:)$)((?s).*?)(?!(^.+\\:))\n\nHere's my a test post";
+	XCTAssertEqual([[sampleWithRegex1 qs_links] count], (NSUInteger)0);
+
+	NSString *sampleWithRegex2 = @"(.+\n)*(?=\\s*$) http://carpeaqua.com";
+	expectedResult = @[@"http://carpeaqua.com"];
+	XCTAssertEqualObjects([sampleWithRegex2 qs_links], expectedResult);
+
+	NSString *markdownPost = @"[http://daringfireball.net](http://carpeaqua.com)";
+	expectedResult = @[@"http://daringfireball.net", @"http://carpeaqua.com"];
+	XCTAssertEqualObjects([markdownPost qs_links], expectedResult);
+}
+
 @end

@@ -75,6 +75,8 @@
 		849938AE18624E83005F56DF /* QSDateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849938AD18624E83005F56DF /* QSDateParserTests.m */; };
 		849938B1186259AF005F56DF /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849938AF186259AF005F56DF /* NSDictionaryTests.m */; };
 		849AF6A618241BF900EA3D23 /* QSSAXParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AF6A518241BF900EA3D23 /* QSSAXParserTests.m */; };
+		849CE60B18A6F15700940A9B /* Liberal-URL-Regex-Pattern in Resources */ = {isa = PBXBuildFile; fileRef = 849CE60A18A6F15700940A9B /* Liberal-URL-Regex-Pattern */; };
+		849CE60C18A6F15700940A9B /* Liberal-URL-Regex-Pattern in Resources */ = {isa = PBXBuildFile; fileRef = 849CE60A18A6F15700940A9B /* Liberal-URL-Regex-Pattern */; };
 		84A348EB182B5B610007FE90 /* NSMutableURLRequest+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A348EA182B5B610007FE90 /* NSMutableURLRequest+QSKit.m */; };
 		84A348EC182B5B610007FE90 /* NSMutableURLRequest+QSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A348EA182B5B610007FE90 /* NSMutableURLRequest+QSKit.m */; };
 		84B5B3FD182367C80076143A /* NSMutableArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B5B3FC182367C80076143A /* NSMutableArrayTests.m */; };
@@ -209,6 +211,7 @@
 		849938AD18624E83005F56DF /* QSDateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSDateParserTests.m; sourceTree = "<group>"; };
 		849938AF186259AF005F56DF /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryTests.m; sourceTree = "<group>"; };
 		849AF6A518241BF900EA3D23 /* QSSAXParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QSSAXParserTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		849CE60A18A6F15700940A9B /* Liberal-URL-Regex-Pattern */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Liberal-URL-Regex-Pattern"; path = "Resources/Liberal-URL-Regex-Pattern"; sourceTree = SOURCE_ROOT; };
 		84A348E9182B5B610007FE90 /* NSMutableURLRequest+QSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSMutableURLRequest+QSKit.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		84A348EA182B5B610007FE90 /* NSMutableURLRequest+QSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSMutableURLRequest+QSKit.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		84B5B3FC182367C80076143A /* NSMutableArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSMutableArrayTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -333,6 +336,7 @@
 				842D4B111821CCF50034B5E3 /* main.m */,
 				842D4B161821CD240034B5E3 /* QSKit-Prefix.pch */,
 				842D4B171821CD310034B5E3 /* Credits.rtf */,
+				849CE60A18A6F15700940A9B /* Liberal-URL-Regex-Pattern */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -626,6 +630,7 @@
 				842D4B0B1821CC870034B5E3 /* MainMenu.xib in Resources */,
 				847DED781824708D00AAB887 /* subscriptions.opml in Resources */,
 				842D4B151821CD020034B5E3 /* InfoPlist.strings in Resources */,
+				849CE60B18A6F15700940A9B /* Liberal-URL-Regex-Pattern in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +645,7 @@
 				8411AC8B1821CB0000338503 /* InfoPlist.strings in Resources */,
 				8418EF86182475620087EB14 /* subscriptions.plist in Resources */,
 				847DED591824507E00AAB887 /* appstore.png in Resources */,
+				849CE60C18A6F15700940A9B /* Liberal-URL-Regex-Pattern in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
