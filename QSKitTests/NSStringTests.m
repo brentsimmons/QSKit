@@ -89,15 +89,19 @@
 
 	NSString *s = @"Walked the sand with the crustaceans";
 	NSData *hashData = [s qs_md5Hash];
-	static const unsigned int expectedHashData[] = {0x61, 0x2c, 0x8f, 0x45, 0x62, 0xf9, 0xe9, 0xc5, 0xb4, 0xca, 0x9c, 0x83, 0x69, 0xfa, 0xb5, 0x9e};
+	static const unsigned char expectedHashData[] = {0x61, 0x2c, 0x8f, 0x45, 0x62, 0xf9, 0xe9, 0xc5, 0xb4, 0xca, 0x9c, 0x83, 0x69, 0xfa, 0xb5, 0x9e};
 
-	XCTAssertTrue(memcmp([hashData bytes], expectedHashData, sizeof(expectedHashData)));
+	XCTAssertEqual((size_t)[hashData length], sizeof(expectedHashData));
+	OSStatus result = memcmp([hashData bytes], expectedHashData, sizeof(expectedHashData));
+	XCTAssertEqual(result, (OSStatus)0);
 
 	s = @"Garfiéld";
 	hashData = [s qs_md5Hash];
-	static const unsigned int expectedHashData2[] = {0x0f, 0xdd, 0xe9, 0x52, 0x91, 0xa6, 0xbf, 0x0d, 0x0f, 0x22, 0x49, 0x20, 0x67, 0x24, 0x93, 0x82};
+	static const unsigned char expectedHashData2[] = {0x0f, 0xdd, 0xe9, 0x52, 0x91, 0xa6, 0xbf, 0x0d, 0x0f, 0x22, 0x49, 0x20, 0x67, 0x24, 0x93, 0x82};
 
-	XCTAssertTrue(memcmp([hashData bytes], expectedHashData2, sizeof(expectedHashData2)));
+	XCTAssertEqual((size_t)[hashData length], sizeof(expectedHashData));
+	result = memcmp([hashData bytes], expectedHashData2, sizeof(expectedHashData2));
+	XCTAssertEqual(result, (OSStatus)0);
 }
 
 
