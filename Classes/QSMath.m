@@ -7,33 +7,22 @@
 //
 
 #import "QSMath.h"
+#import <tgmath.h>
 
 
 CGFloat QSCeil(CGFloat f) {
 
-	#if __LP64__
-		return ceil(f);
-	#else
-		return ceilf(f);
-	#endif
+	return ceil(f);
 }
 
 CGFloat QSAbs(CGFloat f) {
 
-	#if __LP64__
-		return fabs(f);
-	#else
-		return fabsf(f);
-	#endif
+	return fabs(f);
 }
 
 
 CGFloat QSFloor(CGFloat f) {
 
-	#if __LP64__
-		return floor(f);
-	#else
-		return floorf(f);
-	#endif
+	return floor(f);
 }
 
