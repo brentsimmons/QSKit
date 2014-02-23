@@ -12,6 +12,10 @@
 
 /*Does the right things with 32-bit/64-bit sizes.*/
 
+/*PBS 23 Feb 2014: you should just use tgmath.h instead.
+ I wrote these before I knew about it. These functions
+ themselves now use tgmath.h.*/
+ 
 CGFloat QSCeil(CGFloat f);
 CGFloat QSFloor(CGFloat f);
 CGFloat QSAbs(CGFloat f);
