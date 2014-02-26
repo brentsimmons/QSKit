@@ -8,6 +8,7 @@
 
 #import "NSString+QSKit.h"
 #import "NSData+QSKit.h"
+#import "NSMutableArray+QSKit.h"
 
 
 BOOL QSStringIsEmpty(NSString *s) {
@@ -148,5 +149,40 @@ NSString *QSStringReplaceAll(NSString *stringToSearch, NSString *searchFor, NSSt
     return [self substringFromIndex:[prefix length]];
 }
 
+
+- (NSArray *)qs_links {
+
+	if ([self length] < 1)
+		return nil;
+
+	/*The regex pattern is from John Gruber.*/
+
+	static dispatch_once_t pred;
+	static NSRegularExpression *regex = nil;
+
+	dispatch_once(&pred, ^{
+		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Liberal-URL-Regex-Pattern" ofType:@""];
+		NSError *error = nil;
+		NSString *pattern = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+		error = nil;
+		regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+	});
+
+	NSAssert(regex != nil, @"The regular expression for qs_links was not loaded.");
+
+	NSMutableArray *links = [NSMutableArray new];
+
+	@autoreleasepool {
+
+		NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, [self length])];
+		for (NSTextCheckingResult *oneResult in matches) {
+			NSRange oneRange = [oneResult rangeAtIndex:1];
+			NSString *oneLink = [self substringWithRange:oneRange];
+			[links qs_safeAddObject:oneLink];
+		}
+	}
+
+	return links;
+}
 
 @end

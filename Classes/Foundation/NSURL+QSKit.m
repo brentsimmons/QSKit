@@ -17,13 +17,13 @@
 
 - (BOOL)qs_isHTTPSURL {
 
-    return [[self scheme] caseInsensitiveCompare:QSSchemeHTTPS] == NSOrderedSame;
+    return [self scheme] && [[self scheme] caseInsensitiveCompare:QSSchemeHTTPS] == NSOrderedSame;
 }
 
 
 - (BOOL)qs_isHTTPURL {
 
-    return [[self scheme] caseInsensitiveCompare:QSSchemeHTTP] == NSOrderedSame;
+    return [self scheme] && [[self scheme] caseInsensitiveCompare:QSSchemeHTTP] == NSOrderedSame;
 }
 
 

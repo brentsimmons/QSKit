@@ -54,4 +54,12 @@ typedef struct {
 - (NSString *)qs_stringByStrippingPrefix:(NSString *)prefix caseSensitive:(BOOL)caseSensitive;
 
 
+/*Returns an array of links from a string. Matches things like www.example.com as well as http://example.com/
+ Because regular expressions are slow, this is best called on a thread other than the main thread.
+ To make this work, you need to be sure to include the file Liberal-URL-Regex-Pattern.
+ (It contains the actual regular expression.)*/
+
+- (NSArray *)qs_links;
+
+
 @end

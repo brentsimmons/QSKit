@@ -23,9 +23,11 @@
 	NSData *d = [s dataUsingEncoding:NSUTF8StringEncoding];
 	NSData *hashData = [d qs_md5Hash];
 
-	unsigned int expectedHashData[] = {0x61, 0x2c, 0x8f, 0x45, 0x62, 0xf9, 0xe9, 0xc5, 0xb4, 0xca, 0x9c, 0x83, 0x69, 0xfa, 0xb5, 0x9e};
+	static const unsigned char expectedHashData[] = {0x61, 0x2c, 0x8f, 0x45, 0x62, 0xf9, 0xe9, 0xc5, 0xb4, 0xca, 0x9c, 0x83, 0x69, 0xfa, 0xb5, 0x9e};
 
-	XCTAssertTrue(memcmp([hashData bytes], expectedHashData, sizeof(expectedHashData)));
+	XCTAssertEqual((size_t)[hashData length], sizeof(expectedHashData));
+	OSStatus result = memcmp([hashData bytes], expectedHashData, sizeof(expectedHashData));
+	XCTAssertEqual(result, (OSStatus)0);
 }
 
 
