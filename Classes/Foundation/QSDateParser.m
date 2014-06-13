@@ -268,7 +268,7 @@ static NSInteger parsedTimeZoneOffset(const char *bytes, NSUInteger numberOfByte
 
 #pragma mark - Date Creation
 
-static NSDate *dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(NSInteger year, NSInteger month, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second, NSInteger timeZoneOffset) {
+static NSDate *dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(NSInteger year, NSInteger month, NSInteger day, NSInteger hour, NSInteger minute, NSInteger second, NSInteger milliseconds, NSInteger timeZoneOffset) {
 
 	struct tm timeInfo;
 	timeInfo.tm_sec = (int)second;
@@ -283,7 +283,7 @@ static NSDate *dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(NSInteger y
 	timeInfo.tm_gmtoff = 0;//[timeZone secondsFromGMT];
 	timeInfo.tm_zone = nil;
 	
-	time_t rawTime = timegm(&timeInfo) - timeZoneOffset; //timegm instead of mktime (which uses local time zone)
+	NSTimeInterval rawTime = (NSTimeInterval)(timegm(&timeInfo) - timeZoneOffset); //timegm instead of mktime (which uses local time zone)
 	if (rawTime == (time_t)ULONG_MAX) {
 		
 		/*NSCalendar is super-amazingly-slow (which is partly why QSDateParser exists), so this is used only when the date is far enough in the future (19 January 2038 03:14:08Z on 32-bit systems) that timegm fails. If profiling says that this is a performance issue, then you've got a weird app that needs to work with dates far in the future.*/
@@ -296,11 +296,15 @@ static NSDate *dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(NSInteger y
 		dateComponents.day = day;
 		dateComponents.hour = hour;
 		dateComponents.minute = minute;
-		dateComponents.second = second;
+		dateComponents.second = second + (milliseconds / 1000);
 
 		return [[NSCalendar autoupdatingCurrentCalendar] dateFromComponents:dateComponents];
 	}
-	
+
+	if (milliseconds > 0) {
+		rawTime += ((float)milliseconds / 1000.0f);
+	}
+
 	return [NSDate dateWithTimeIntervalSince1970:rawTime];
 }
 
@@ -351,7 +355,7 @@ static NSDate *QSParsePubDateWithBytes(const char *bytes, NSUInteger numberOfByt
 	if (hasTimeZone)
 		timeZoneOffset = parsedTimeZoneOffset(bytes, numberOfBytes, currentIndex);
 
-	return dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(year, month, day, hour, minute, second, timeZoneOffset);
+	return dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(year, month, day, hour, minute, second, 0, timeZoneOffset);
 }
 
 
@@ -369,6 +373,7 @@ static NSDate *QSParseW3CWithBytes(const char *bytes, NSUInteger numberOfBytes) 
 	NSInteger hour = 0;
 	NSInteger minute = 0;
 	NSInteger second = 0;
+	NSInteger milliseconds = 0;
 	NSInteger timeZoneOffset = 0;
 	
 	year = nextNumericValue(bytes, numberOfBytes, 0, 4, &finalIndex);
@@ -380,12 +385,14 @@ static NSDate *QSParseW3CWithBytes(const char *bytes, NSUInteger numberOfBytes) 
 
 	NSUInteger currentIndex = finalIndex + 1;
 	BOOL hasMilliseconds = (currentIndex < numberOfBytes) && (bytes[currentIndex] == '.');
-	if (hasMilliseconds)
-		currentIndex+= 3; //milliseconds always has three digits to skip
+	if (hasMilliseconds) {
+		milliseconds = nextNumericValue(bytes, numberOfBytes, currentIndex, 3, &finalIndex);
+		currentIndex = finalIndex + 1;
+	}
 
 	timeZoneOffset = parsedTimeZoneOffset(bytes, numberOfBytes, currentIndex);
 
-	return dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(year, month, day, hour, minute, second, timeZoneOffset);
+	return dateWithYearMonthDayHourMinuteSecondAndTimeZoneOffset(year, month, day, hour, minute, second, milliseconds, timeZoneOffset);
 }
 
 

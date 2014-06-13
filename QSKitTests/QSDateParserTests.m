@@ -64,6 +64,48 @@
 	expectedDateResult = [NSDate dateWithString:@"2050-11-17 08:40:07 -0500"];
 	XCTAssertNotNil(expectedDateResult);
 	XCTAssertEqualObjects(QSDateWithString(@"2050-11-17T08:40:07-05:00"), expectedDateResult);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-06-12 16:44:29 -0700"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.245];
+	NSDate *dateResult = QSDateWithString(@"2014-06-12T16:44:29.245-07:00");
+	NSTimeInterval expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	NSTimeInterval resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-06-12 16:44:29 -0700"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.99];
+	dateResult = QSDateWithString(@"2014-06-12T16:44:29.990-07:00");
+	expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-06-12 16:44:29 -0700"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.099];
+	dateResult = QSDateWithString(@"2014-06-12T16:44:29.099-07:00");
+	expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-05-21 5:37:59 +0000"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.229];
+	dateResult = QSDateWithString(@"2014-05-21T05:37:59.229Z");
+	expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-05-21 5:37:27 +0000"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.519];
+	dateResult = QSDateWithString(@"2014-05-21T05:37:27.519Z");
+	expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
+
+	expectedDateResult = [NSDate dateWithString:@"2014-06-12 18:37:59 +0000"];
+	expectedDateResult = [expectedDateResult dateByAddingTimeInterval:0.272];
+	dateResult = QSDateWithString(@"2014-06-12T18:37:59.272Z");
+	expectedTimeInterval = [expectedDateResult timeIntervalSince1970];
+	resultTimeInterval = [dateResult timeIntervalSince1970];
+	XCTAssertEqual(expectedTimeInterval, resultTimeInterval);
 }
 
 @end
