@@ -13,7 +13,7 @@
 
 
 - (void)qs_safeSetObject:(id)obj forKey:(id)key {
-	if (obj != nil & key != nil) {
+	if (obj != nil && key != nil) {
 		[self setObject:obj forKey:key];
 	}
 }
