@@ -8,11 +8,6 @@
 
 
 @import Foundation;
-#if TARGET_OS_IPHONE
-	@import UIKit;
-#else
-	@import AppKit;
-#endif
 #import "QSPlatform.h"
 #import "QSBlocks.h"
 

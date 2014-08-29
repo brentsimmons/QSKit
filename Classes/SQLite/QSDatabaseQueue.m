@@ -6,6 +6,13 @@
 //  Copyright (c) 2013 Q Branch LLC. All rights reserved.
 //
 
+//  If you are getting compilation errors at #import "FMDatabase.h"
+//  you may not have FMDB (https://github.com/ccgus/fmdb) in which case
+//  you will want to define QSKIT_SQLLITE_DISABLED preprocessor definition
+//  or exclude this .m from the project.
+#if !QSKIT_SQLLITE_DISABLED
+
+
 #import "FMDatabase.h"
 #import "QSDatabaseQueue.h"
 #import "QSPlatform.h"
@@ -125,3 +132,5 @@
 
 @end
 
+
+#endif

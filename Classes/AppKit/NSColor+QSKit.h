@@ -7,6 +7,9 @@
 //
 
 
+#if !TARGET_OS_IPHONE
+
+
 @import Cocoa;
 
 
@@ -17,3 +20,6 @@
 
 
 @end
+
+
+#endif
